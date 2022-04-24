@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "todo-ffcf6": {
+      "hosting": {
+        "todo-app": [
+          "todo-ffcf6"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "todo-ffcf6"
+  }
+}
