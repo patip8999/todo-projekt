@@ -9,7 +9,9 @@ import { HomePagePage } from './home-page.page';
           path: '',
           component: HomePagePage,
         }
-      ])],
+      ]),
+     
+    ],
   	declarations: [HomePagePage],
   	providers: [],
   	exports: [] })
