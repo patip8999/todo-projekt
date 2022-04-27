@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomePagePageModule } from './pages/home-page.page-module';
 import { AddTaskPageModule } from './pages/add-task.page-module';
+import { TasklistPageModule } from './pages/tasklist.page-module';
 
 const routes: Routes = [{ 
         path: 'home', 
@@ -10,6 +11,10 @@ const routes: Routes = [{
   { 
         path: 'AddTask', 
         loadChildren: () => AddTaskPageModule
+      },
+  { 
+        path: 'tasklist', 
+        loadChildren: () => TasklistPageModule
       }
 ];
 
