@@ -2,4 +2,6 @@
 <form [formGroup]="taskList" (ngSubmit)="onTaskListSubmited(taskList)">
     <input type="text" formControlName="task" placeholder="Task">
     <input type="submit" value="Submit"></form><ul><li 
-        *ngFor="let item of taskList$ | async">{{ item | json }}</li></ul>
+        *ngFor="let item of taskList$ | async">{{ item.task }}</li></ul>
+        
+
