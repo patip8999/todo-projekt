@@ -5,6 +5,7 @@ import { TasklistPage } from './tasklist.page';
 import { TasklistComponentModule } from '../../../projects/task/src/lib/adapters/primary/ui/tasklist.component-module';
 import { FirebaseTaskServiceModule } from '../../../projects/task/src/lib/adapters/secondary/infrastructure/firebase-task.service-module';
 
+
 @NgModule({ imports: [CommonModule, 
       RouterModule.forChild([
         {
@@ -13,7 +14,8 @@ import { FirebaseTaskServiceModule } from '../../../projects/task/src/lib/adapte
         }
       ]),
   TasklistComponentModule,
-  FirebaseTaskServiceModule
+  FirebaseTaskServiceModule,
+
 ],
   	declarations: [TasklistPage],
   	providers: [],
