@@ -5,6 +5,7 @@ import { GETS_ALL_TASK_DTO, GetsAllTaskDtoPort } from '../../../application/port
 import { FormGroup, FormControl } from '@angular/forms';
 import { ADDS_TASK_DTO, AddsTaskDtoPort } from '../../../application/ports/secondary/adds-task.dto-port';
 import { switchMap } from 'rxjs/operators';
+import { SETS_TASK_DTO, SetsTaskDtoPort } from '../../../application/ports/secondary/sets-task.dto-port';
 
 @Component({ selector: 'lib-tasklist', templateUrl: './tasklist.component.html', encapsulation: ViewEncapsulation.None, changeDetection: ChangeDetectionStrategy.OnPush })
 export class TasklistComponent {
@@ -12,7 +13,7 @@ export class TasklistComponent {
   readonly task: FormGroup = new FormGroup({task: new FormControl()});
   task$: Observable<TaskDTO[]> = this._getsAllTaskDto.getAll().pipe(switchMap(data => this._getsAllTaskDto.getAll()));
 
-  constructor(@Inject(GETS_ALL_TASK_DTO) private _getsAllTaskDto: GetsAllTaskDtoPort, @Inject(ADDS_TASK_DTO) private _addsTaskDto: AddsTaskDtoPort) {
+  constructor(@Inject(GETS_ALL_TASK_DTO) private _getsAllTaskDto: GetsAllTaskDtoPort, @Inject(ADDS_TASK_DTO) private _addsTaskDto: AddsTaskDtoPort, @Inject(SETS_TASK_DTO) private _setsTaskDto: SetsTaskDtoPort) {
   }
 
   onTaskTasked(): void {
@@ -21,5 +22,20 @@ export class TasklistComponent {
     });
     this.task.reset();
   }
+
+  onSetChecked(task: TaskDTO): void {
+    if (task.done == true) {
+    this._setsTaskDto.set({
+      task: task.task,
+      done: true, 
+    })
+  }
+  if (task.done == false) {
+    this._setsTaskDto.set ({
+      task: task.task,
+      done: false,
+    })
+  }
 };
   
+}

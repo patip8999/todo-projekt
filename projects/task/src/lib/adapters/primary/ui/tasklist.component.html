@@ -1,7 +1,11 @@
 <ul><li *ngFor="let task of list$ | async">
-<ul class="list-group">
-    <li class="list-group-item">
-      <input class="form-check-input me-1" type="checkbox" value="" aria-label="..." >
+
+  <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+    <label class="form-check-label" for="flexCheckDefault">
      {{ task.task}}
 
-    </li></ul>
+ <div *ngIf="task.done ==false">
+   <input class="form-check-input rounded-circle hover" type="checkbox" value=""
+   (change)="onSetChecked(task)" />
+ </div>
