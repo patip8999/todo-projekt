@@ -22,20 +22,4 @@ export class TasklistComponent {
     });
     this.task.reset();
   }
-
-  onSetChecked(task: TaskDTO): void {
-    if (task.done == true) {
-    this._setsTaskDto.set({
-      task: task.task,
-      done: true, 
-    })
-  }
-  if (task.done == false) {
-    this._setsTaskDto.set ({
-      task: task.task,
-      done: false,
-    })
-  }
-};
-  
 }

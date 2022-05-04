@@ -4,7 +4,7 @@ import { RouterModule } from '@angular/router';
 import { TasklistPage } from './tasklist.page';
 import { TasklistComponentModule } from '../../../projects/task/src/lib/adapters/primary/ui/tasklist.component-module';
 import { FirebaseTaskServiceModule } from '../../../projects/task/src/lib/adapters/secondary/infrastructure/firebase-task.service-module';
-
+import { CostamComponentModule } from '../../../projects/task/src/lib/adapters/primary/ui/costam.component-module';
 
 @NgModule({ imports: [CommonModule, 
       RouterModule.forChild([
@@ -15,7 +15,7 @@ import { FirebaseTaskServiceModule } from '../../../projects/task/src/lib/adapte
       ]),
   TasklistComponentModule,
   FirebaseTaskServiceModule,
-
+  CostamComponentModule,
 ],
   	declarations: [TasklistPage],
   	providers: [],
