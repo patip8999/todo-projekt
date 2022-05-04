@@ -1,6 +1,7 @@
-
+<ul><li *ngFor="let task of list$ | async">
 <ul class="list-group">
     <li class="list-group-item">
-      <input class="form-check-input me-1" type="checkbox" value="" aria-label="..." >{{ task }}
-      <ul><li *ngFor="let item of list$ | async">{{ item.task }}</li></ul>
+      <input class="form-check-input me-1" type="checkbox" value="" aria-label="..." >
+     {{ task.task}}
 
+    </li></ul>
