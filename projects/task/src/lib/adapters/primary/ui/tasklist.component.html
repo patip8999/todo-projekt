@@ -1,16 +1,14 @@
 <div class="container mb-5 mt-3 p-25 m-20">
   <div class="form-check-inline d-flex-column m-3" *ngFor="let task of list$ | async">
-  <div class="text-decoration-line-trought" *ngIf="task.done == true">
-    <input class="form-check-input rounded circle" type="checkbox" value="" (change)="onSetChecked(task)"
-    checked />
-    {{task.task}}
-  </div>
-<div class="form-check">
-    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-    <label class="form-check-label" for="flexCheckDefault">
-     {{ task.task}}
+    <div class="text-decoration-line-trought" *ngIf="task.done == true">
+      <input class="form-check-input rounded circle" type="checkbox" value="" (change)="onSetChecked(task)" checked />
+      {{task.task}}
+    </div>
+    <div class="form-check">
+      <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+      <label class="form-check-label" for="flexCheckDefault">
+        {{ task.task}}
 
- <div *ngIf="task.done ==false">
-   <input class="form-check-input rounded-circle hover" type="checkbox" value=""
-   (change)="onSetChecked(task)" />
- </div>
+        <div *ngIf="task.done ==false">
+          <input class="form-check-input rounded-circle hover" type="checkbox" value="" (change)="onSetChecked(task)" />
+        </div>
