@@ -26,4 +26,9 @@ export class TaskaddComponent {
     });
     this.taskList.reset();
   }
+  onclear() {
+    
+    this.taskList.reset();
+    
+  }
 }

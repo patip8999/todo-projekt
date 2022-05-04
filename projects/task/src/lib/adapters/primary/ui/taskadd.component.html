@@ -1,5 +1,13 @@
 
+<div class="container">
+    <div class="row">
+		<div class="col-12 col-md-12 text-center">
 <form [formGroup]="taskList" (ngSubmit)="onTaskListSubmited(taskList)">
     <input type="text" formControlName="task" placeholder="Task">
-    <input type="submit" value="Submit"></form>
+    
+    <input type="submit" value="Add Task" class="btn btn-info">
+   <button class="btn btn-secondary" type="button" (click)="onclear()">Cancel</button>
+ 
+    
 
+ 
