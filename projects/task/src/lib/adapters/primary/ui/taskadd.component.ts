@@ -22,7 +22,9 @@ export class TaskaddComponent {
       return;
     }
     this._addsTaskDto.add({
-      task: taskList.get('task')?.value
+      task: taskList.get('task')?.value,
+      done: false,
+      created: Date.now()
     });
     this.taskList.reset();
   }
