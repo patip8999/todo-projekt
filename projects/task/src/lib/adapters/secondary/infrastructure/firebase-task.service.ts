@@ -26,10 +26,10 @@ export class FirebaseTaskService implements AddsTaskDtoPort, GetsAllTaskDtoPort,
   }
 
   set(task: Partial<TaskDTO>): void {
-    this._client.doc('tasks/'+task.id).update(task);
+    this._client.doc('task-list/'+task.id).update(task);
   }
 
   remove(id: string): void {
-    this._client.doc('tasks/'+id).delete();
+    this._client.doc('task-list/'+id).delete();
   }
 }
