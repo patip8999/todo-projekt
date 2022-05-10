@@ -24,7 +24,7 @@ export class TaskListComponent {
     );
   }
 
-  onTaskRemoveed(Id: string):  void {
-    this._removesTaskDto.remove('task-list/'+Id);
+  onTaskRemoveed(Id: string): void {
+    this._removesTaskDto.remove(Id);
   }
 }
