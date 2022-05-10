@@ -2,32 +2,22 @@
     <div class="form-group">
 
 
-<ul *ngFor="let task of task$ | async">
-<li class="row">
+        <ul *ngFor="let task of task$ | async">
+            <li class="row">
 
-<div class="col col-8">
+                <div class="col col-8">
 
 
-    <input class="form-check-input rounded circle pointer text-decoration-line-trought" type="checkbox"  name="flexRadioDefault"
-    [checked]="task.done" (click)="onTaskChecked(task)">
-    <label class="form-check-label striketrought">
-        {{task.task}} 
-    </label>
-  </div>
-  <div class="col col-4">
-      <div class="dropdown d-flex justify-content-end">
-          <button class="btn btn-light bg-transparent border-0" type="button" id="dropdownMenuButton1"
-          data-bs-toggle="dropdown" aria-expanded="false">
-          ...
-        </button>
-        <ul class="dropdown-menu" style="border:none; background-color: rgba(red, green, blue, alpha);"
-        aria-labelledby="dropdownMenuButton1">
-        <li>
-            <button (click)="onTaskRemoveed(task.id)" type="button" class="btn btn-primary"
-            data-bs-toggle="modal" data-bs-target="#exampleMOdal">
-            Delete
-        </button>
-        </li>
-    </ul>
-      </div>
-  </div>
+                    <input class="form-check-input rounded circle pointer text-decoration-line-trought" type="checkbox"
+                        name="flexRadioDefault" [checked]="task.done" (click)="onTaskChecked(task)">
+                    <label class="form-check-label striketrought">
+                        {{task.task}}
+                    </label>
+
+                    <button (click)="onTaskRemoveed(task.id)" type="button" class="btn btn-primary"
+                        data-bs-toggle="modal" data-bs-target="#exampleMOdal">
+                        Delete
+                    </button>
+
+
+                </div>

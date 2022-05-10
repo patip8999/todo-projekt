@@ -4,6 +4,7 @@ import { TaskDTO } from '../../../application/ports/secondary/task.dto';
 import { GETS_ALL_TASK_DTO, GetsAllTaskDtoPort } from '../../../application/ports/secondary/gets-all-task.dto-port';
 import { SETS_TASK_DTO, SetsTaskDtoPort } from '../../../application/ports/secondary/sets-task.dto-port';
 import { REMOVES_TASK_DTO, RemovesTaskDtoPort } from '../../../application/ports/secondary/removes-task.dto-port';
+import { Router } from '@angular/router';
 
 @Component({ selector: 'lib-task-list', templateUrl: './task-list.component.html', encapsulation: ViewEncapsulation.None, changeDetection: ChangeDetectionStrategy.OnPush })
 export class TaskListComponent {
@@ -11,7 +12,7 @@ export class TaskListComponent {
   .pipe(map((task: TaskDTO[]) =>
     task.sort((a,b) => a.created - b.created)))
 
-  constructor(@Inject(GETS_ALL_TASK_DTO) private _getsAllTaskDto: GetsAllTaskDtoPort, @Inject(SETS_TASK_DTO) private _setsTaskDto: SetsTaskDtoPort, @Inject(REMOVES_TASK_DTO) private _removesTaskDto: RemovesTaskDtoPort) {
+  constructor(@Inject(GETS_ALL_TASK_DTO) private _getsAllTaskDto: GetsAllTaskDtoPort, @Inject(SETS_TASK_DTO) private _setsTaskDto: SetsTaskDtoPort, @Inject(REMOVES_TASK_DTO) private _removesTaskDto: RemovesTaskDtoPort, private router: Router) {
   }
 
   onTaskChecked(task: Partial<TaskDTO>): void {
@@ -23,7 +24,7 @@ export class TaskListComponent {
     );
   }
 
-  onTaskRemoveed(taskId: string): void {
-    //this._removesTaskDto.remove(this.taskToRemove);
+  onTaskRemoveed(Id: string):  void {
+    this._removesTaskDto.remove('task-list/'+Id);
   }
 }
