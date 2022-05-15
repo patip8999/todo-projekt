@@ -6,6 +6,7 @@ import { AddTaskPage } from './add-task.page';
 
 import { TaskaddComponentModule } from '../../../projects/task/src/lib/adapters/primary/ui/taskadd.component-module';
 import { FirebaseTaskServiceModule } from '../../../projects/task/src/lib/adapters/secondary/infrastructure/firebase-task.service-module';
+import { TaskListComponentModule } from '@task';
 
 
 @NgModule({ imports: [CommonModule, 
@@ -18,6 +19,7 @@ import { FirebaseTaskServiceModule } from '../../../projects/task/src/lib/adapte
   
   TaskaddComponentModule,
   FirebaseTaskServiceModule,
+  TaskListComponentModule
 
 ],
   	declarations: [AddTaskPage],
