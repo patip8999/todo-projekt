@@ -1,14 +1,34 @@
-<div class="p-3 mb-2 bg-info text-dark">
-    <p class="fw-bold">
-    <p class="fw-bolder">
-    <p class="fs-3">AWESOME TODO APP
-</div>
 
-<div>
 
-        <p class="fw-bold" class="fs-3">
+
+<div class="banner">
+  <p class="h1 display-4">Awesome TODO APP</p>
+  <p class="lead"><div>
+
+    <p class="fw-bold" class="fs-3">
   TODAY  {{myDate | date}}
+  </div>
+ 
 </div>
+<style>
+  .banner {
+    background-image: url('https://home.kpmg/content/dam/kpmg/pl/images/insights/alerty/pl-Tax-Alert-hero-banner-1500-857.png');
+    background-size: cover;
+    height: 200px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 32px;
+  }
+
+  .banner > p {
+    color: white;
+    padding: 10px;
+  }
+</style>
+
 
 
 
